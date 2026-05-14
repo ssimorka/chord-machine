@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react'
+import simorkaLogo from '@/assets/simorka-logo.png'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster, toast } from 'sonner'
 import { Header } from '@/components/Header'
@@ -115,7 +116,19 @@ function ChordMachineApp() {
       </main>
       <footer className="container mt-10 flex items-center justify-between border-t border-white/5 pt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
         <span>{GENRES.length} genres · 16 steps · chord sequencer</span>
-        <span>Built for the dancefloor.</span>
+        <a
+          href="https://simorkadesigns.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 transition-opacity hover:opacity-100"
+        >
+          <span className="text-muted-foreground/50">Built by</span>
+          <img
+            src={simorkaLogo}
+            alt="Simorka Designs"
+            className="h-4 w-auto opacity-60 transition-opacity hover:opacity-100"
+          />
+        </a>
       </footer>
       <Toaster theme="dark" position="bottom-right" />
     </div>
