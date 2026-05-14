@@ -20,14 +20,15 @@ export function Header({ isPlaying }: Props) {
           <h1 className="text-xl font-extrabold leading-none tracking-tight sm:text-2xl">
             Chord <span className="text-purple">Machine</span>
           </h1>
-          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
             16-Step Boutique Chord Sequencer · V1.0
           </p>
         </div>
       </div>
+
       <div className="flex items-center gap-2">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.03] px-3 py-1 font-mono text-[11px] text-muted">
-          <span className={isPlaying ? 'h-1.5 w-1.5 rounded-full bg-purple animate-pulse-purple shadow-[0_0_8px_rgba(155,92,255,0.8)]' : 'h-1.5 w-1.5 rounded-full bg-white/20'} />
+        <span className="chip">
+          <span className={isPlaying ? 'led animate-cm-pulse' : 'led-off'} />
           {isPlaying ? 'Live' : 'Idle'}
         </span>
       </div>

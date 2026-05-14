@@ -40,12 +40,15 @@ export function Transport({ isPlaying, bpm, step, activeGenreIndex, onTogglePlay
             )}
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >
-            {isPlaying ? <Pause className="h-6 w-6" fill="currentColor" /> : <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" />}
+            {isPlaying
+              ? <Pause className="h-6 w-6" fill="currentColor" />
+              : <Play className="h-6 w-6 translate-x-0.5" fill="currentColor" />}
           </motion.button>
+
           <div className="ml-1 flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <span className={cn(isPlaying ? 'h-2 w-2 rounded-full bg-purple animate-pulse-purple shadow-[0_0_10px_rgba(155,92,255,0.8)]' : 'h-2 w-2 rounded-full bg-white/10')} />
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+              <span className={isPlaying ? 'led animate-cm-pulse' : 'led-off'} />
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                 {isPlaying ? 'Running' : 'Idle'}
               </span>
             </div>
@@ -70,11 +73,11 @@ export function Transport({ isPlaying, bpm, step, activeGenreIndex, onTogglePlay
               <div className="mb-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                 <span className="text-[15px] font-bold tracking-tight">{activeGenre.name}</span>
                 <span className="font-mono text-[11px] tabular-nums text-purple">{bpm} BPM</span>
-                <span className="font-mono text-[11px] tabular-nums text-muted">
+                <span className="font-mono text-[11px] tabular-nums text-muted-foreground">
                   · {root} {SCALE_LABELS[scale]}
                 </span>
               </div>
-              <p className="text-[12px] italic text-muted">{activeGenre.vibe}</p>
+              <p className="text-[12px] italic text-muted-foreground">{activeGenre.vibe}</p>
               <p className="mt-0.5 line-clamp-2 text-[12px] leading-relaxed text-foreground/75">{activeGenre.desc}</p>
             </motion.div>
           )}

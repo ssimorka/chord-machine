@@ -33,7 +33,7 @@ export function GlobalControls({ root, scale, bpm, onRoot, onScale, onBpm, onRan
                   'h-7 rounded-md border px-2 font-mono text-[11px] font-bold transition-colors',
                   root === n
                     ? 'border-purple/60 bg-purple/20 text-purple'
-                    : 'border-white/5 bg-white/[0.03] text-muted hover:border-white/15 hover:text-foreground'
+                    : 'border-white/5 bg-white/[0.03] text-muted-foreground hover:border-white/15 hover:text-foreground'
                 )}
               >
                 {n}
@@ -55,7 +55,7 @@ export function GlobalControls({ root, scale, bpm, onRoot, onScale, onBpm, onRan
                   'h-7 rounded-md border px-2 font-mono text-[11px] font-bold transition-colors',
                   scale === k
                     ? 'border-purple/60 bg-purple/20 text-purple'
-                    : 'border-white/5 bg-white/[0.03] text-muted hover:border-white/15 hover:text-foreground'
+                    : 'border-white/5 bg-white/[0.03] text-muted-foreground hover:border-white/15 hover:text-foreground'
                 )}
               >
                 {label}
@@ -70,7 +70,7 @@ export function GlobalControls({ root, scale, bpm, onRoot, onScale, onBpm, onRan
         <div className="flex items-center justify-between">
           <span className="label-mono">Tempo</span>
           <span className="font-mono text-sm font-bold tabular-nums text-purple text-glow-purple">
-            {bpm} <span className="text-[10px] font-normal text-muted">BPM</span>
+            {bpm} <span className="text-[10px] font-normal text-muted-foreground">BPM</span>
           </span>
         </div>
         <Slider min={60} max={200} step={1} value={[bpm]} onValueChange={([v]) => onBpm(v ?? bpm)} />

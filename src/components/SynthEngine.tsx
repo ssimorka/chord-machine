@@ -37,7 +37,7 @@ export function SynthEngine({ params, onChange }: Props) {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {/* Oscillator */}
-        <div className="panel-sm flex flex-col gap-3 p-3">
+        <div className="panel-inset flex flex-col gap-3 p-3">
           <span className="label-mono">Oscillator</span>
           <div className="flex gap-1">
             {WAVES.map(w => (
@@ -49,7 +49,7 @@ export function SynthEngine({ params, onChange }: Props) {
                   'flex-1 rounded-md border py-1.5 font-mono text-[11px] font-bold transition-colors',
                   params.wave === w.value
                     ? 'border-purple/60 bg-purple/20 text-purple'
-                    : 'border-white/5 bg-white/[0.03] text-muted hover:text-foreground'
+                    : 'border-white/5 bg-white/[0.03] text-muted-foreground hover:text-foreground'
                 )}
               >
                 {w.label}
@@ -61,7 +61,7 @@ export function SynthEngine({ params, onChange }: Props) {
         </div>
 
         {/* Filter */}
-        <div className="panel-sm flex flex-col gap-3 p-3">
+        <div className="panel-inset flex flex-col gap-3 p-3">
           <span className="label-mono">Filter</span>
           <ParamSlider label="Cutoff" value={params.cutoff} min={100} max={8000} step={10}
             format={v => v >= 1000 ? `${(v/1000).toFixed(1)}kHz` : `${Math.round(v)}Hz`}
@@ -71,7 +71,7 @@ export function SynthEngine({ params, onChange }: Props) {
         </div>
 
         {/* Envelope */}
-        <div className="panel-sm flex flex-col gap-3 p-3">
+        <div className="panel-inset flex flex-col gap-3 p-3">
           <span className="label-mono">Envelope</span>
           <ParamSlider label="Attack" value={params.attack} min={0.001} max={2} step={0.001}
             format={v => `${v.toFixed(3)}s`} onChange={v => onChange({ attack: v })} />
@@ -84,7 +84,7 @@ export function SynthEngine({ params, onChange }: Props) {
         </div>
 
         {/* Amplifier */}
-        <div className="panel-sm flex flex-col gap-3 p-3">
+        <div className="panel-inset flex flex-col gap-3 p-3">
           <span className="label-mono">Amplifier</span>
           <ParamSlider label="Volume" value={params.volume} min={-30} max={0} step={0.5}
             format={v => `${v.toFixed(1)}dB`} onChange={v => onChange({ volume: v })} />

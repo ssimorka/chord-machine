@@ -36,12 +36,12 @@ export function StepGrid({ steps, currentStep, selectedStep, onStepClick }: Prop
                 isCurrent && !isActive && 'border-purple/50 bg-purple/10',
                 !isCurrent && isActive && !isSelected && 'border-purple/50 bg-purple/20 text-purple',
                 !isCurrent && isActive && isSelected && 'border-white bg-purple/25 text-purple ring-1 ring-white/60',
-                !isCurrent && !isActive && isSelected && 'border-white/60 bg-white/5 text-muted ring-1 ring-white/40',
-                !isCurrent && !isActive && !isSelected && 'border-white/8 bg-white/[0.02] text-muted hover:border-white/20',
+                !isCurrent && !isActive && isSelected && 'border-white/60 bg-white/5 text-muted-foreground ring-1 ring-white/40',
+                !isCurrent && !isActive && !isSelected && 'border-white/8 bg-white/[0.02] text-muted-foreground hover:border-white/20',
                 (Math.floor(i / 4) % 2 === 1) && !isActive && !isCurrent && 'bg-white/[0.015]'
               )}
             >
-              {isActive && rootNote ? rootNote : <span className="text-[9px] text-muted/40">{i + 1}</span>}
+              {isActive && rootNote ? rootNote : <span className="text-[9px] text-muted-foreground/40">{i + 1}</span>}
               {hasPoly && (
                 <span className="absolute bottom-0.5 right-0.5 h-1 w-1 rounded-full bg-purple/80" />
               )}

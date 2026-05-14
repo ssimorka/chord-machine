@@ -113,7 +113,7 @@ function ChordMachineApp() {
         <SynthEngine params={synthParams} onChange={handleSynthChange} />
         <SavedPatterns refreshKey={savedKey} onLoad={seq.loadPattern} />
       </main>
-      <footer className="container mt-10 flex items-center justify-between border-t border-white/5 pt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-muted/70">
+      <footer className="container mt-10 flex items-center justify-between border-t border-white/5 pt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
         <span>{GENRES.length} genres · 16 steps · chord sequencer</span>
         <span>Built for the dancefloor.</span>
       </footer>

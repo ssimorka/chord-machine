@@ -11,7 +11,7 @@ interface Props {
 export function StepControls({ selectedStep, step, onUpdate }: Props) {
   if (selectedStep === null || !step) {
     return (
-      <div className="panel flex items-center justify-center p-4 text-[13px] text-muted">
+      <div className="panel flex items-center justify-center p-4 text-[13px] text-muted-foreground">
         Select a step to edit
       </div>
     )
@@ -31,7 +31,7 @@ export function StepControls({ selectedStep, step, onUpdate }: Props) {
                 'rounded-md px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider transition-colors',
                 (mode === 'poly') === step.poly
                   ? 'bg-purple text-white'
-                  : 'text-muted hover:text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
               )}
             >
               {mode}

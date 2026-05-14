@@ -25,7 +25,7 @@ export function Keyboard({ selectedStep, stepNotes, scaleNotes, onNoteClick }: P
 
   if (selectedStep === null) {
     return (
-      <div className="panel flex items-center justify-center p-4 text-[13px] text-muted">
+      <div className="panel flex items-center justify-center p-4 text-[13px] text-muted-foreground">
         Select a step to assign notes
       </div>
     )
@@ -39,7 +39,7 @@ export function Keyboard({ selectedStep, stepNotes, scaleNotes, onNoteClick }: P
           <button
             type="button"
             onClick={() => setOctave(o => Math.max(1, o - 1))}
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-muted transition-colors hover:text-foreground"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-muted-foreground transition-colors hover:text-foreground"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -47,7 +47,7 @@ export function Keyboard({ selectedStep, stepNotes, scaleNotes, onNoteClick }: P
           <button
             type="button"
             onClick={() => setOctave(o => Math.min(7, o + 1))}
-            className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-muted transition-colors hover:text-foreground"
+            className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-muted-foreground transition-colors hover:text-foreground"
           >
             <ChevronRight className="h-4 w-4" />
           </button>
@@ -96,7 +96,7 @@ export function Keyboard({ selectedStep, stepNotes, scaleNotes, onNoteClick }: P
           )
         })}
       </div>
-      <p className="text-[11px] text-muted">Dimmed keys are outside the scale · {scaleNotes.join(' · ')}</p>
+      <p className="text-[11px] text-muted-foreground">Dimmed keys are outside the scale · {scaleNotes.join(' · ')}</p>
     </div>
   )
 }

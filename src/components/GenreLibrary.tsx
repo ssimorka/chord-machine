@@ -46,9 +46,9 @@ export function GenreLibrary({ open, activeIndex, onPick }: Props) {
                     <span className={cn('text-[13px] font-semibold leading-tight', activeIndex === i && 'text-purple')}>
                       {g.name}
                     </span>
-                    <span className="font-mono text-[10px] tabular-nums text-muted">{g.bpm}</span>
+                    <span className="font-mono text-[10px] tabular-nums text-muted-foreground">{g.bpm}</span>
                   </div>
-                  <p className="line-clamp-1 text-[11px] text-muted/70">{g.vibe}</p>
+                  <p className="line-clamp-1 text-[11px] text-muted-foreground/70">{g.vibe}</p>
                 </motion.button>
               ))}
             </div>
